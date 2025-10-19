@@ -6,10 +6,9 @@ import { buttonVariants } from '@/components/ui/buttonVariants';
 import { ThemeToggle } from '@/core/theme/ThemeToggle';
 import { CenteredMenu } from '@/features/landing/CenteredMenu';
 import { Section } from '@/features/landing/Section';
+import { Logo } from '@/templates/Logo';
 
-import { Logo } from './Logo';
-
-export const Navbar = () => {
+export function LandingHeader() {
   const t = useTranslations('Navbar');
 
   return (
@@ -57,4 +56,4 @@ export const Navbar = () => {
       </CenteredMenu>
     </Section>
   );
-};
+}

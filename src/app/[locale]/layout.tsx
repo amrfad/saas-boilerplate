@@ -5,6 +5,9 @@ import { NextIntlClientProvider, useMessages } from 'next-intl';
 import { unstable_setRequestLocale } from 'next-intl/server';
 
 import { DemoBadge } from '@/components/DemoBadge';
+import { RegionProvider } from '@/core/regions/RegionProvider';
+import { TemplateProvider } from '@/core/templating/TemplateContext';
+import { ThemeProvider } from '@/core/theme/ThemeProvider';
 import { AllLocales } from '@/utils/AppConfig';
 
 export const metadata: Metadata = {
@@ -53,15 +56,20 @@ export default function RootLayout(props: {
   return (
     <html lang={props.params.locale} suppressHydrationWarning>
       <body className="bg-background text-foreground antialiased" suppressHydrationWarning>
-        {/* PRO: Dark mode support for Shadcn UI */}
-        <NextIntlClientProvider
-          locale={props.params.locale}
-          messages={messages}
-        >
-          {props.children}
+        <ThemeProvider defaultMode="light">
+          <TemplateProvider>
+            <RegionProvider>
+              <NextIntlClientProvider
+                locale={props.params.locale}
+                messages={messages}
+              >
+                {props.children}
 
-          <DemoBadge />
-        </NextIntlClientProvider>
+                <DemoBadge />
+              </NextIntlClientProvider>
+            </RegionProvider>
+          </TemplateProvider>
+        </ThemeProvider>
       </body>
     </html>
   );

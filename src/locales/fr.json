@@ -95,7 +95,16 @@
   },
   "Dashboard": {
     "meta_title": "Tableau de bord du SaaS Template",
-    "meta_description": "Un template gratuit et open-source de landing page pour votre entreprise SaaS, construit avec Next.js, TypeScript, Shadcn UI et Tailwind CSS."
+    "meta_description": "Un template gratuit et open-source de landing page pour votre entreprise SaaS, construit avec Next.js, TypeScript, Shadcn UI et Tailwind CSS.",
+    "overview": "Aperçu",
+    "organization": "Organisation",
+    "profile": "Profil",
+    "settings": "Paramètres",
+    "menu": "Menu"
+  },
+  "Demo": {
+    "meta_title": "Démo du Framework de Templates - SaaS Template",
+    "meta_description": "Démonstration interactive du framework de templates avec systèmes de région et de widgets."
   },
   "DashboardIndex": {
     "title_bar": "Tableau de bord",
